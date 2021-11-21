@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Textfield extends StatelessWidget {
   final TextEditingController controller;
-  final String hintName;
+  String hintName;
   final IconData icon;
   final bool isObscureText;
   final TextInputType inputType;
@@ -15,7 +15,7 @@ class Textfield extends StatelessWidget {
       this.isObscureText = false,
       this.inputType = TextInputType.text,
       this.isEnable = true,
-      Key? key})
+      Key? key, })
       : super(key: key);
 
   final TextEditingController password = TextEditingController();
@@ -46,7 +46,6 @@ class Textfield extends StatelessWidget {
           if (hintName == "Password" && hintName.length > 20) {
             return 'Password should be under 20 char';
           }
-
           return null;
         },
         decoration: InputDecoration(
